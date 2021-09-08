@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+    padding: 5px 5%;
+    background-image: url('../img/bg1.jpg');
+    background-size: 100%;
+    color: white;
+    font: 12pt 'Trebuchet MS';
+}
+
+header>h1 {
+    color: blue;
+    /* селектор h1 внутри header */
+    text-shadow: 2px 2px white;
+    font-size: 50px;
+}
+
+nav {
+    padding: 5px;
+}
+
+nav a {
+    color: bisque;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+header {
+    padding-top: 30px;
+}
