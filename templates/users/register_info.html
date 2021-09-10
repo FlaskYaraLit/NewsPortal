@@ -1,0 +1,18 @@
+{% extends 'base/master.html' %}
+<!-- одключаем (загружаем) master.html страницу -->
+{% block title %}Отчёт о регистрации{% endblock %}
+
+{% block content %}
+<div class="main-box">
+    <h2>Отчёт о регистрации</h2>
+    <hr>
+    <div class="info-box" style="background-color: whitesmoke; padding: 20px color: navy">
+        Вы успешно или неуспешно (узнаете позже) зарегистрированны ...
+        <br>
+        {{ context['login'] }} <br>
+        {{ context['pass1'] }} <br>
+        {{ context['pass2'] }} <br>
+        {{ context['email'] }} <br>
+    </div>
+</div>
+{% endblock %}
