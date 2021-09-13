@@ -1,5 +1,6 @@
-from flask import render_template
+from flask import render_template, request
 from config import app
+from models.user import User
 
 class UsersController(object):
 
@@ -25,7 +26,25 @@ class UsersController(object):
         return render_template('users/profile.html')
 
     @staticmethod
-    @app.route('/users/register')
+    @app.route('/users/register', methods=['GET', 'POST'])
     def register():
         # получение данных из формы ввода пароля и сохранение юзера в базе Данных
-        return render_template('users/register.html')
+        if request.method == 'GET':
+            return render_template('users/register.html')
+        elif request.method == 'POST':
+            login = request.form.get('login')
+            pass1 = request.form.get('pass1')
+            pass2 = request.form.get('pass2')
+            email = request.form.get('email')
+
+            password = '?'
+            regdate = '?'
+            status = 'new_user'
+            # User.register(login, password, email, regdate, status)
+
+            return render_template('users/register_info.html', context={
+                'login' : login,
+                'pass1' : pass1,
+                'pass2' : pass2,
+                'email' : email
+            }) # Транзитный словарь КОНТЕКСТ
