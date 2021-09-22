@@ -1,0 +1,17 @@
+{% extends 'base/master.html' %}
+<!-- одключаем (загружаем) master.html страницу -->
+{% block title %}Отчёт о добавленини новости{% endblock %}
+
+{% block content %}
+<div class="main-box">
+    <h2>Отчёт о добавленини новости</h2>
+    <hr>
+    <div class="info-box">
+        <span style="color: {{ context.mess_color }}"> <!-- # span содает отдельный стиль для фрагмента текста -->
+            {{ context.message }}
+        </span>
+        <br>
+
+    </div>
+</div>
+{% endblock %}

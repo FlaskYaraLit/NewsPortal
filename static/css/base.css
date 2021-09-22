@@ -35,3 +35,28 @@ nav a {
 header {
     padding-top: 30px;
 }
+
+.info-box {
+    color: navy;
+     background-color: whitesmoke;
+     padding: 20px;
+}
+
+#news_table {
+    width: 100%;
+    margin: 25px 0px;
+}
+
+#news_table th,
+#news_table td {
+    border: 2px solid white;
+    padding: 5px;
+}
+
+#news_table th {
+    color: lime;
+}
+
+.logo {
+    width: 100px;
+}

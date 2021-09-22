@@ -14,7 +14,7 @@
     <hr> <!--horizontal row оризонтальная строка -->
     <nav>
         <div class="row">
-            <div class="col-md-8 left">
+            <div class="col-md-7 left">
                 |
                 <a href="/">Главная</a>
                 |
@@ -25,11 +25,27 @@
                 <a href="/contact">Контакты</a>
 
             </div>
-            <div class="col-md-4 right">
+            <div class="col-md-5 right">
+                <a href="" style="margin-right:50px">
+                    <span style="color: lime">
+                        Hi,
+                        {% if 'user' in session %} <!-- Это управляющаяя конструкция шаблонизатора на питоне-->
+                            {{session['user']}}
+                        {% else %}
+                            Guest!
+                        {% endif %}
+                    </span>
+                </a>
                 |
-                <a href="/users/login">Вход</a>
-                |
-                <a href="/users/register">Регистрация</a>
+                {% if 'user' not in session %}
+                    <a href="/users/login">Вход</a>
+                    |
+                    <a href="/users/register">Регистрация</a>
+                {% else %}
+                    <a href="/users/logout">Выход</a>
+                    |
+                    <a href="/users/profile">Профиль</a>
+                {% endif %}
                 |
             </div>
         </div>
